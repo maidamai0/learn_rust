@@ -11,6 +11,21 @@ fn main() {
     print_user(&user2);
 
 
+    let user3 = User {
+        username: String::from("copy"),
+        email:String::from("copy@123.com"),
+        ..user2
+    };
+    print_user(&user3);
+
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
+    let black = Color(0,0,0);
+    let origin = Point(0,0,0);
+
+    println!("black is [{}, {}, {}]", black.0, black.1, black.2);
+    println!("origin is [{}, {}, {}]", origin.0, origin.1, origin.2);
+
 }
 
 fn print_user(user: &User) {
@@ -32,3 +47,4 @@ struct User{
     sign_in_count: u64,
     active: bool
 }
+
