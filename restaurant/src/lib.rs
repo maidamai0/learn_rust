@@ -14,6 +14,10 @@ mod front_of_house {
 fn serve_order() {}
 
 mod back_of_house {
+   pub enum Appetizer {
+        Soup,
+        Salad,
+    }
     fn fix_incorrect_order() {
         println!("{}", "I'm fixing the order");
         cook_order();
@@ -45,4 +49,7 @@ pub fn eat_at_restaurant() {
 
     crate::front_of_house::hosting::add_to_waiting_list();
     front_of_house::hosting::add_to_waiting_list();
+
+    let order = back_of_house::Appetizer::Soup;
+    let order_1 = back_of_house::Appetizer::Salad;
 }
