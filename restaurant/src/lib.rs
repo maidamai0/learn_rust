@@ -40,6 +40,20 @@ mod back_of_house {
     }
 }
 
+// either of the two is valid
+// use crate::front_of_house::hosting;
+use self::front_of_house::hosting;
+use std::collections::HashMap;
+use std::io::Result as ioResult;
+use std::fmt::Result;
+
+fn use_hash_map()  {
+    let mut map = HashMap::new();
+    map.insert("key", Ok("value"));
+    map.insert("key2", Err("error"));
+}
+
+
 pub fn eat_at_restaurant() {
     println!("{}", "I'm eating at the front of the house");
 
@@ -47,8 +61,8 @@ pub fn eat_at_restaurant() {
     meal.toast = String::from("Wheat");
     println!("{}", meal.toast);
 
-    crate::front_of_house::hosting::add_to_waiting_list();
-    front_of_house::hosting::add_to_waiting_list();
+    hosting::add_to_waiting_list();
+    hosting::add_to_waiting_list();
 
     let order = back_of_house::Appetizer::Soup;
     let order_1 = back_of_house::Appetizer::Salad;
