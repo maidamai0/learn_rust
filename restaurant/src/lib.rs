@@ -1,15 +1,6 @@
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waiting_list() {}
-        fn seat_at_table() {}
-    }
+mod front_of_house;
 
-    mod serbing {
-        fn take_over_table() {}
-        fn serve_order() {}
-        fn take_payment() {}
-    }
-}
+pub use crate::front_of_house::hosting;
 
 fn serve_order() {}
 
@@ -40,9 +31,6 @@ mod back_of_house {
     }
 }
 
-// either of the two is valid
-// use crate::front_of_house::hosting;
-use self::front_of_house::hosting;
 use std::collections::HashMap;
 use std::io::Result as ioResult;
 use std::fmt::Result;
